@@ -34,7 +34,7 @@ public class DataLoader implements CommandLineRunner {
                     Users.builder()
                             .firstName("Qozi")
                             .lastName("Qochqorov")
-                            .roles(Collections.singleton(roleRepository.findById(1).orElseThrow(() -> new ResourceNotFoundException("getRole"))))
+                            .roles(Collections.singletonList(roleRepository.findById(1).orElseThrow(() -> new ResourceNotFoundException("getRole"))))
                             .username("adminjon")
                             .password(passwordEncoder.encode("root1234"))
                             .enabled(true)

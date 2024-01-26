@@ -7,7 +7,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import java.util.Collection;
-import java.util.Set;
+import java.util.List;
 
 @EqualsAndHashCode(callSuper = true)
 @Getter
@@ -33,7 +33,7 @@ public class Users extends AbsEntity implements UserDetails {
     @JoinTable(name = "users_role",
             joinColumns = {@JoinColumn(name = "users_id")},
             inverseJoinColumns = {@JoinColumn(name = "role_id")})
-    private Set<Role> roles;
+    private List<Role> roles;
 
     private boolean enabled = true;
     private boolean credentialsNonExpired = true;
